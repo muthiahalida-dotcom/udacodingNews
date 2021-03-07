@@ -1,8 +1,7 @@
 package com.perentjanadjaja.udacodingnews.model
 
-class ResponseServer {
-    var status_code : Int? = null
-    var message : String? = null
-
-    var data : ArrayList<News>? = null
-}
+data class ResponseServer (
+    var status : String? = null,
+    var totalResults : Int? = null,
+    var articles : ArrayList<News>? = null
+)

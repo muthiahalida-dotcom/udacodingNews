@@ -1,6 +1,7 @@
 package com.perentjanadjaja.udacodingnews
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import com.perentjanadjaja.udacodingnews.model.ResponseServer
 import com.perentjanadjaja.udacodingnews.network.ConfigNetwork
+import kotlinx.android.synthetic.main.activity_home.*
 import javax.security.auth.callback.Callback
 
 class HomeActivity : AppCompatActivity() {
@@ -16,26 +18,28 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        if (isConnect()){
-
-        ConfigNetwork.getRetrofit().getDataNews().enqueue(object : Callback<ResponseServer>{})
-        override fun onFailure(call: Call<ResponseServer>, t: Throwable){
-            Log.d("terror sever",t.message)
+        softNews.setOnClickListener {
+            val intent=Intent(this, ListViewActivity::class.java)
+            intent.putExtra("Category", "soft")
+            startActivity(intent)
         }
 
-        override fun onResponse(
-            call: Call<ResponseServer>,
-            response: Response<ResponseServer>
-        ){
-            Log.d("response server",response.message())
+        hardNews.setOnClickListener {
+            val intent=Intent(this, ListViewActivity::class.java)
+            intent.putExtra("Category", "hard")
+            startActivity(intent)
         }
 
-        fun isConnect():Boolean{
-            val connect : ConnectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
-            return connect.activeNetworkInfo!=null && connect.activeNetworkInfo.isConnected
+        goodNews.setOnClickListener {
+            val intent=Intent(this, ListViewActivity::class.java)
+            intent.putExtra("Category", "good")
+            startActivity(intent)
         }
 
-            Toast.makeText(this,"device tidak connect dengan internet",Toast.LENGTH_SHORT).show()}
+        badNews.setOnClickListener {
+            val intent=Intent(this, ListViewActivity::class.java)
+            intent.putExtra("Category", "bad")
+            startActivity(intent)
+        }
     }
 }
