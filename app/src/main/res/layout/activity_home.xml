@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/softNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="soft News"
+        tools:ignore="MissingClass,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hardNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Hard News"
+        tools:ignore="MissingClass,MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/badNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Bad News"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/goodNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Good News"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
